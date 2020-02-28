@@ -1,0 +1,81 @@
+{{ define "main" }}
+
+<div id="work-page">
+  <div class="col-67">
+    <div class="carosel main-carousel">
+      {{ range .Params.slides }}
+      <div class="carousel-cell">
+        <img src="/{{ . }}">
+      </div>
+      {{ end }}
+      {{ if isset .Params "keyshot" }}
+      <div style="left:0px; width:100%; height:0px; position:relative; padding-bottom:75%;">
+        <iframe src="{{ "CR2000_VR/CR2000_360_VR.191.html" | absURL }}"
+                frameborder="0"
+                allowfullscreen="true"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                style="top: 0px; left: 0px; width: 100%; height:
+                     100%; position: absolute;">
+        </iframe>
+      </div> 
+      {{ end }}
+    </div>
+    <br/>
+    <div class="nav-carousel">
+      {{ range .Params.slides }}
+      <img class="carousel-cell" src="/{{ . }}">
+      {{ end }}
+      {{ if isset .Params "keyshot" }}
+      <div style="left:0px; width:100%; height:0px; position:relative; padding-bottom:75%;">
+        <iframe src="{{ "CR2000_VR/CR2000_360_VR.191.html" | absURL }}"
+                frameborder="0"
+                allowfullscreen="true"
+                webkitallowfullscreen="true"
+                mozallowfullscreen="true"
+                style="top: 0px; left: 0px; width: 100%; height:
+                     100%; position: absolute;">
+        </iframe>
+      </div> 
+      {{ end }}
+    </div>
+  </div>
+  <div class="col-33">
+    <div id="portfolio-info" class="work-description">
+      <h1>{{ .Title }}</h1>
+      <h3>{{ .Description }}</h3>
+      <ul>
+        {{ if isset .Params "role" }}
+        <li>Role: {{ .Params.role }}</li>
+        {{ end }}
+        {{ if isset .Params "recognition" }}
+        <li>Recognition: {{ .Params.recognition }}</li>
+        {{ end }}
+        {{ if isset .Params "release" }}
+        <li>Release: {{ .Params.release }}</li>
+        {{ end }}
+      </ul>
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+  var main = document.querySelector('.main-carousel');
+  var nav = document.querySelector('.nav-carousel');
+  var flkty = new Flickity( main, {
+  contain: true,
+  pageDots: false,
+  wrapAround: true,
+  adaptiveHeight: true
+  });
+  var flickynav = new Flickity( nav, {
+  asNavFor: '.main-carousel',
+  contain: true,
+  pageDots: false,
+  freeScroll: true,
+  prevNextButtons: false
+  });
+</script>
+
+{{ end }}

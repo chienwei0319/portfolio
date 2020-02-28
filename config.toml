@@ -1,0 +1,75 @@
+languageCode = "en-us"
+title = "Chien Wei's Portfolio"
+baseurl = "https://chienwei0319.github.io"
+
+[params]
+    [[params.contacts]]
+    type = "facebook"
+    name = "黃健崴"
+    url = "https://www.facebook.com/profile.php?id=100000245435285"
+    icon = "facebook-square"
+
+    [[params.contacts]]
+    type = "linkedin"
+    name = "黃健崴"
+    url = "https://www.linkedin.com/in/chien-wei-huang-356617a3"
+    icon = "linkedin-square"
+
+    [[params.contacts]]
+    type = "pinterest"
+    name = "chienwei0319"
+    url = "https://www.pinterest.com/chienwei0319"
+    icon = "pinterest-square"
+
+    [[params.contacts]]
+    type = "email"
+    name = "chienwei0319"
+    url = "chienwei0319@gmail.com"
+    icon = "fas fa-envelope-square"
+
+    [[params.contacts]]
+    type = "phone"
+    name = "TW +886 910001121"
+    url = "+886910001121"
+    icon = "fas fa-phone-square"
+
+    [[params.contacts]]
+    type = "phone"
+    name = "HK +852 66119341"
+    url = "+85266119341"
+    icon = "fas fa-phone-square"
+
+    [[params.contacts]]
+    type = "phone"
+    name = "CN +86 13045828202"
+    url = "+8613045828202"
+    icon = "fas fa-phone-square"
+
+    [[params.cv]]
+    company = "D&D Anli International Co., Ltd., Taipei"
+    position = "Industrial Designer (since 2015)"
+    [[params.cv]]
+    company = "GaussToys Inc., Taipei"
+    position = "Industrial Designer (2015-2016)"
+    [[params.cv]]
+    company = "Lichy Enterprise Ltd., Taipei"
+    position = "Industrial Design Intern (2014)"
+    [[params.award]]
+    name = "Udn Design Award Winner"
+    product = "Blueprintbag"
+    year = "2016"
+    [[params.award]]
+    name = "34th YODEX"
+    fullname = "Younger Designer's Exhibition"
+    year = "2015"
+    [[params.award]]
+    name = "TTDW"
+    fullname = "Taiwan Tech Design Week"
+    year = "2014"
+    [[params.award]]
+    name = "YDC Yacht Design Award Winner"
+    product = "Mosasaurus"
+    year = "2014"
+    [[params.award]]
+    name = "NTUST Scholarship For Outstanding Students"
+    year = "2012"

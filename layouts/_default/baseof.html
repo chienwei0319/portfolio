@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    <div class="container">
+      {{ partial "header.html" . }}
+      <hr/>
+      {{ block "main" . }}
+      {{ end }}
+      <hr/>
+      {{ partial "footer.html" . }}
+    </div>
+    <script
+      src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+var masonryElem = document.querySelector('.masonry');
+
+["resize", "load"].forEach(function(event) {
+  window.addEventListener(event, function() {
+    imagesLoaded( document.querySelector('.masonry'), function() {
+        masonryElem.style.display = "block";
+        var msnry = new Masonry( '.masonry', {
+            columnWidth: '.grid-sizer',
+            gutter: '.gutter-sizer',
+            itemSelector: '.grid-item',
+            percentPosition: true
+        });
+    });
+  }, false);
+});
+    </script>
+  </body>
+</html>

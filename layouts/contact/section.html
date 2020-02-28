@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<div id="contact-page">
+  <div class="col-67">
+    <img src="/img/Page/Contact.jpg"
+         title="I love hiking!"
+         id="contact-photo">
+  </div>
+  <div class="col-33">
+    <div id="contact-upper">
+      <h1>黃 健崴</h1>
+      <h1>HUANG, CHIEN WEI</h1>
+      <h3>Industrial Designer / Product Designer</h3>
+      <br/>
+    </div>
+    <ul style="padding-left: 0px;">
+      {{ range .Site.Params.contacts }}
+      <li>
+        {{ if eq .type "email" }}
+        <a href="mailto:{{ .url }}">
+          {{ else }}
+          {{ if eq .type "phone" }}
+          <a href="tel:{{ .url }}">
+            {{ else }}
+            <a href="{{ .url }}">
+            {{ end }}
+            {{ end }}
+            <i class="fa fa-{{ .icon }} fa-lg fa-fw"
+               aria-hidden="true"></i>
+            &nbsp; {{ .name }}
+          </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+
+{{ end }}

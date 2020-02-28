@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<div id="about-page">
+  <div class="col-33">
+    <img src="/img/Page/About.jpg"
+         title="This is me."
+         id="about-photo">
+  </div>
+  <div class="col-67">
+    
+    <h1>About</h1>
+
+    <p>Chien-Wei Huang (黃健崴) is a young designer currently based in Taipei, Taiwan. After a formal education in product design at National Taiwan University of Science and Technology, he is now focusing on consumer electronics and inovation design.</p>
+
+    <p>He has been particularly capable of identifying wide-ranged values of designs from the practical to the visionary, meanwhile, also further polished the proficiency on delivering both quality and creativity.</p>
+
+    <h1>Skill</h1>
+
+    <p>Professional experience in the following product categories: Consumer electronics, innovation technology, soft goods, bicycle industry, vehicle accessories, sports gear, packaging</p>
+
+    <p>Software: Photoshop. Illustrator. Lightroom. Creo. Keyshot. Sketchbook</p>
+
+    <h1>Short CV</h1>
+    <div id="about-cv">
+      <ul>
+        {{ range .Site.Params.cv }}
+        <li>{{ .position }} @ {{ .company }}</li>
+        {{ end }}
+        {{ range .Site.Params.award }}
+        {{ if isset . "fullname" }}
+        <li>{{ .name }} ({{ .fullname }}) {{ .year }} </li>
+        {{ else }}
+        <li>{{ .name }} {{ .year }} </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{{ end }}

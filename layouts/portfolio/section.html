@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<div class="masonry" style="display: none;">
+  <div class="grid-sizer"></div>
+  <div class="gutter-sizer"></div>
+  {{ range .Pages }}
+  <div class="grid-item">
+  <a href="{{ .Permalink }}">
+    <div class="item">
+      <img class="transition" src="/{{ .Params.image }}">
+      <h4>{{ .Title }}</h4>
+      <p>{{ .Description }}</p>
+    </div>
+  </a>
+  </div>
+  {{ end }}
+</div>
+
+{{ end }}
